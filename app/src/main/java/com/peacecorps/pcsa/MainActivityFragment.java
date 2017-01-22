@@ -20,7 +20,11 @@ import com.peacecorps.pcsa.support_services.SupportServicesFragment;
 
 /**
  * A placeholder fragment containing a simple view.
+ *
+ + * @author calistus
+ + * @since 22-07-2015.
  */
+
 public class MainActivityFragment extends Fragment {
 
     public final static String TAG = "MainActivityFragment";

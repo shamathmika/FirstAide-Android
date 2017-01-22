@@ -46,7 +46,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-
+/**
+ * Activity used to load the right placeholder fragment and build the navigation drawer
+ *
+ * @author calistus
+ * @since 2015-01-15
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -95,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         prepareListData();
         listAdapter = new NavDrawerListAdapter(this, listDataHeader, listDataChild);
         expListView.setAdapter(listAdapter);
+        //Setting functionality to each element in the navigation drawer
         expListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
@@ -251,6 +257,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Defines function to swap fragment based on saved instance in back stack.
+     * @param activity          Takes activity that needs to be added to back stack or just to begin transaction required.
+     * @param fragment          Fragment to replace any existing fragment.
+     * @param TAG               Updating TAG variables from respective classes.
+     * @param addToBackStack    To check if the activity is to be added to back stack or not.
+     */
     public static void swapFragmentIn(FragmentActivity activity, Fragment fragment, String TAG, boolean addToBackStack)
     {
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
